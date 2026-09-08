@@ -1,30 +1,107 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Brand tokens pulled directly from the CushyBots / CBI Robotics live
+ * Shopify theme (Horizon) config/settings_data.json — font, monochrome
+ * black/white palette, and corner-radius scale, so the docs site matches
+ * cbirobotics.com rather than Docusaurus' default green.
  */
 
-/* You can override the default Infima variables here. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* Font: Inter everywhere, matching the storefront (body 400, subheading 500, heading 700) */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-font-family-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  --ifm-heading-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-weight-semibold: 500;
+
+  /* Body copy: storefront uses 14px paragraphs */
+  --ifm-font-size-base: 87.5%; /* ~14px against a 16px root */
+  --ifm-line-height-base: 1.6;
+
+  /* Heading scale, proportioned down from the storefront's hero sizes
+     (h1 56 / h2 48 / h3 32 / h4 24 / h5 14 / h6 12) to suit dense doc pages
+     while keeping the same relative scale and weight. */
+  --ifm-h1-font-size: 2.4rem;
+  --ifm-h2-font-size: 1.85rem;
+  --ifm-h3-font-size: 1.4rem;
+  --ifm-h4-font-size: 1.1rem;
+  --ifm-h5-font-size: 0.95rem;
+  --ifm-h6-font-size: 0.85rem;
+
+  /* Monochrome palette — storefront's scheme-1: black text/buttons on white */
+  --ifm-color-primary: #000000;
+  --ifm-color-primary-dark: #000000;
+  --ifm-color-primary-darker: #000000;
+  --ifm-color-primary-darkest: #000000;
+  --ifm-color-primary-light: #1a1a1a;
+  --ifm-color-primary-lighter: #333333;
+  --ifm-color-primary-lightest: #4d4d4d;
+
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: rgba(0, 0, 0, 0.81);
+  --ifm-heading-color: #000000;
+  --ifm-link-color: #000000;
+  --ifm-link-hover-color: #333333;
+
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-toc-border-color: rgba(0, 0, 0, 0.06);
+  --ifm-table-border-color: rgba(0, 0, 0, 0.06);
+  --ifm-hr-border-color: rgba(0, 0, 0, 0.06);
+
+  /* Corner radii — storefront: buttons 14px, cards/inputs 4px */
+  --ifm-button-border-radius: 14px;
+  --ifm-card-border-radius: 4px;
+  --ifm-global-radius: 4px;
+  --ifm-code-border-radius: 4px;
+  --ifm-alert-border-radius: 4px;
+
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+.button {
+  border-radius: 14px;
+  font-weight: 500;
+}
+
+.button--secondary {
+  --ifm-button-border-color: #000000;
+}
+
+/* Dark mode — storefront's scheme-5: near-black background, white text/buttons */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #ffffff;
+  --ifm-color-primary-dark: #e6e6e6;
+  --ifm-color-primary-darker: #cccccc;
+  --ifm-color-primary-darkest: #b3b3b3;
+  --ifm-color-primary-light: #ffffff;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+
+  --ifm-background-color: #1a1a1a;
+  --ifm-navbar-background-color: #262626;
+  --ifm-font-color-base: rgba(255, 255, 255, 0.92);
+  --ifm-heading-color: #ffffff;
+  --ifm-link-color: #ffffff;
+  --ifm-link-hover-color: rgba(255, 255, 255, 0.7);
+  --ifm-toc-border-color: rgba(255, 255, 255, 0.1);
+  --ifm-table-border-color: rgba(255, 255, 255, 0.1);
+  --ifm-hr-border-color: rgba(255, 255, 255, 0.1);
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .button--primary {
+  --ifm-button-background-color: #ffffff;
+  --ifm-button-color: #000000;
+  --ifm-button-border-color: #ffffff;
+}
+
+/* Footer — storefront's dark section palette (#333333 bg, white text) */
+.footer--dark {
+  --ifm-footer-background-color: #333333;
+  --ifm-footer-color: rgba(255, 255, 255, 0.85);
+  --ifm-footer-link-color: #ffffff;
+  --ifm-footer-title-color: #ffffff;
 }

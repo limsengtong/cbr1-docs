@@ -72,8 +72,9 @@ const config = {
       navbar: {
         title: 'CBI Robotics',
         logo: {
-          alt: 'CBI Robotics Logo',
-          src: 'img/logo.svg',
+          alt: 'CushyBots / CBI Robotics Logo',
+          src: 'https://cbirobotics.com/cdn/shop/files/CB_High_Res.svg?height=36&v=1779417913',
+          height: 32,
         },
         items: [
           {
