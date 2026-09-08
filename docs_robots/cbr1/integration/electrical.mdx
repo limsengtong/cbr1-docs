@@ -1,0 +1,18 @@
+---
+title: Electrical Integration
+sidebar_position: 2
+---
+
+# Electrical Integration
+
+## Battery System
+
+CBR-1 uses a **standard, customer-procured LiPo battery** paired with a CBI-supplied battery tray and BMS (battery management system). This differs from R-BOT, which uses a CBI-integrated battery — CBR-1's design allows academic labs to source and swap cells locally.
+
+## Motor Controller
+
+CBR-1 uses the **WDC One** motor controller. See the [WDC One Motor Controller Manual](/docs_robots/cbr1/maintenance/motor-controller) for firmware and wiring reference, built from ELF firmware analysis of the controller.
+
+## Accessory Power
+
+Auxiliary sensors and compute should draw from the regulated accessory rail rather than tapping directly off the main battery bus, to avoid brownouts during peak motor draw.

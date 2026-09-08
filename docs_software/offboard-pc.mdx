@@ -1,0 +1,15 @@
+---
+title: Offboard PC Setup
+sidebar_position: 2
+---
+
+# Offboard PC Setup
+
+To control a CBI Robotics platform from a laptop or workstation instead of onboard, set up an offboard PC as follows:
+
+1. Install a supported ROS distribution matching your robot's current stack (ROS 1 or ROS 2, per that platform's documentation).
+2. Connect the offboard PC to the robot's network — via the debug Ethernet port for initial setup, or Wi-Fi once configured.
+3. Confirm your ROS environment variables point at the robot's ROS master (ROS 1) or that both machines are on the same DDS domain (ROS 2).
+4. Verify connectivity by listing available topics from the offboard PC.
+
+See your platform's [Robots](/docs_robots) documentation for platform-specific network defaults.

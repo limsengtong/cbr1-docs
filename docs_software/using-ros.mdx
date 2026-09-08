@@ -1,0 +1,14 @@
+---
+title: Using ROS
+sidebar_position: 3
+---
+
+# Using ROS
+
+CBI Robotics platforms expose their drivetrain, sensors, and status over ROS topics and services. General guidance:
+
+- Prefer standard message types (`geometry_msgs/Twist`, `sensor_msgs/*`) where a platform supports them, for compatibility with common ROS tooling (RViz, teleop nodes, navigation stacks).
+- Motor controller-level detail (e.g. the WDC One controller used on CBR-1) is documented per-platform under that platform's Maintenance manual, since firmware and protocol specifics vary by hardware revision.
+- When contributing custom nodes or launch files, keep platform-specific configuration in a separate package from generic logic, to ease future ROS 2 migration work.
+
+For a hands-on walkthrough, continue to the [ROS 2 Quickstart](/docs_software/tutorials/ros2-quickstart).
